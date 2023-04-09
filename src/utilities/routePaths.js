@@ -1,7 +1,7 @@
 const pathHome = '/home'
 const pathCharacters = '/characters'
 const pathFavorites = '/favorites'
-const pathDetails = '/deatils/:detailID'
+const pathDetails = '/details/:characterID'
 const pathAbout = '/about'
 const pathContact = '/contact'
 

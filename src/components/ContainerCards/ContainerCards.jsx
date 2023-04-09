@@ -1,15 +1,15 @@
 import { React, useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 
-import CardCharacter from '../../components/CardCharacter/CardCharacter'
+import style from './ContainerCards.module.css'
 
-export default function Details () {
-  const URL_BASE = 'http://localhost:3001/rickandmorty/character'
+import CardCharacter from '../CardCharacter/CardCharacter'
+
+export default function ContainerCards () {
+  const BASE_URL = 'http://localhost:3001/rickandmorty/character/?name=rick'
   const [data, setData] = useState()
-  const { characterID } = useParams()
 
   useEffect(() => {
-    fetch(`${URL_BASE}/${characterID}`)
+    fetch(BASE_URL)
       .then((response) => response.json())
       .then((data) => {
         setData(data)
@@ -17,7 +17,7 @@ export default function Details () {
   }, [])
 
   return (
-    <div>
+    <div className={style.containerCards}>
       {
         data
           ? (
@@ -37,7 +37,7 @@ export default function Details () {
               })
             )
           : (
-            <h3>Loading...</h3>
+            <h2>Loading...</h2>
             )
       }
     </div>

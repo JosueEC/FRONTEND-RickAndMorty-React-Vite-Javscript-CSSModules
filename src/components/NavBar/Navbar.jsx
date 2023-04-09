@@ -1,12 +1,15 @@
 import React from 'react'
 
+import style from './Navbar.module.css'
+import SearchBar from '../SearchBar/SearchBar'
+
 import { Link } from 'react-router-dom'
 
 import {
   pathHome,
   pathCharacters,
   pathFavorites,
-  pathDetails,
+  // pathDetails,
   pathAbout,
   pathContact
 } from '../../utilities/routePaths'
@@ -15,31 +18,34 @@ export default function Navbar () {
   return (
     <header>
       <nav>
+        <label className={style.logo}>
+          <Link to={pathHome} className={style.logo}>Rick & Morty</Link>
+        </label>
 
         <ul>
 
           <li>
-            <Link to={pathHome}>HOME</Link>
+            <Link to={pathHome} className={style.link}>HOME</Link>
           </li>
 
           <li>
-            <Link to={pathCharacters}>CHARACTERS</Link>
+            <Link to={pathCharacters} className={style.link}>CHARACTERS</Link>
           </li>
 
           <li>
-            <Link to={pathFavorites}>FAVORITES</Link>
+            <Link to={pathFavorites} className={style.link}>FAVORITES</Link>
           </li>
 
           <li>
-            <Link to={pathDetails}>DETAILS</Link>
+            <Link to={pathAbout} className={style.link}>ABOUT</Link>
           </li>
 
           <li>
-            <Link to={pathAbout}>ABOUT</Link>
+            <Link to={pathContact} className={style.link}>CONTACT</Link>
           </li>
 
           <li>
-            <Link to={pathContact}>CONTACT</Link>
+            <SearchBar />
           </li>
 
         </ul>
