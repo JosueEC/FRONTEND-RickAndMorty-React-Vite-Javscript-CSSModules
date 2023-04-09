@@ -1,13 +1,14 @@
 .containerCards {
 	/* background: red; */
 	position: relative;
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	/* padding: 20px; */
+	overflow: hidden;
 	gap: 20px;
+	padding-top: 100px;
 }
 
 @media only screen and (max-width:600px){

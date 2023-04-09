@@ -1,12 +1,16 @@
 import React from 'react'
 
 import ContainerCards from '../../components/ContainerCards/ContainerCards'
+// import Profile from '../../components/Profile/Profile'
+
+// import UserState from '../../context/User/UserState'
 
 export default function Characters () {
   return (
-    <main>
-      <h1>Characters Page</h1>
+  // <UserState>
+    <div>
       <ContainerCards />
-    </main>
+    </div>
+  // </UserState>
   )
 }
