@@ -1,3 +1,4 @@
+const pathApp = '/'
 const pathHome = '/home'
 const pathCharacters = '/characters'
 const pathFavorites = '/favorites'
@@ -6,6 +7,7 @@ const pathAbout = '/about'
 const pathContact = '/contact'
 
 export {
+  pathApp,
   pathHome,
   pathCharacters,
   pathFavorites,

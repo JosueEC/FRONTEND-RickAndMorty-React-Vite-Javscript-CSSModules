@@ -1,23 +1,15 @@
-// import { React, useState, useEffect } from 'react'
 import { React, useContext, useEffect } from 'react'
 import UserContext from '../../context/User/UserContext'
 
 import style from './ContainerCards.module.css'
 
 import CardCharacter from '../CardCharacter/CardCharacter'
+import Loader from '../Loader/Loader'
 
 export default function ContainerCards () {
-  // const BASE_URL = 'http://localhost:3001/rickandmorty/character/?name=rick'
-  // const [data, setData] = useState()
-
   const { users, getUsers } = useContext(UserContext)
 
   useEffect(() => {
-    // fetch(BASE_URL)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setData(data)
-    //   })
     getUsers()
   }, [])
 
@@ -42,7 +34,7 @@ export default function ContainerCards () {
               })
             )
           : (
-            <h2>Loading...</h2>
+            <Loader />
             )
       }
     </div>

@@ -6,7 +6,6 @@
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	overflow: hidden;
 	gap: 20px;
 	padding-top: 100px;
 }

@@ -2,6 +2,7 @@ header {
   position: fixed;
   z-index: 1;
   width: 100vw;
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
 nav{
@@ -17,7 +18,7 @@ nav{
     padding: 0 40px;
   }
   label .logo:hover {
-      color: rgb(0, 255, 42);
+      color: #2ecc71;
     transition: 0.5s;
   }
   nav ul{
@@ -38,7 +39,7 @@ nav{
     text-transform: uppercase;
   }
   .link:hover{
-    background: rgb(0, 255, 42);
+    background: #2ecc71;
     transition: .5s;
   }
   @media (max-width: 952px){
@@ -48,5 +49,19 @@ nav{
     }
     nav ul li .link{
       font-size: 16px;
+    }
+  }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: rotateX(70deg);
+      transform-origin: top;
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+      transform-origin: top;
     }
   }

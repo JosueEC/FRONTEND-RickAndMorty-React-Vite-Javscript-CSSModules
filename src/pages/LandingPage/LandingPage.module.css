@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Tilt Warp',cursive;
+    box-sizing: border-box;
+}
+
+.fullbackground {
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+
+    /* Take full size */
+    height: 100vh;
+    width: 100%;
+
+    /* Background */
+    background: url('../../assets/fondogeneral.jpg') center center / cover no-repeat;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+.containerText {
+    position: relative;
+    top: 3%;
+    right: 15%;
+    width: 50vw;
+    font-size: 1.5em;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    transition: 1.5s;
+
+    padding: 30px;
+    margin-top: 80px;
+    line-height: 23px;
+    text-align: center;
+
+    background: rgba( 17, 17, 23, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.containerText:hover {
+  transform: scale(1.1);
+
+}
+
+p {
+    padding-bottom: 50px;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hoverText {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hoverText {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }

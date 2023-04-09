@@ -23,7 +23,7 @@
 
 .containerCard:hover {
 	box-shadow: 0 0 50px rgb(0, 255, 42);
-	text-shadow: 0 0 20px rgb(25, 255, 128);;
+	text-shadow: 0 0 20px rgb(25, 255, 128);
 	transform: scale(1.05);
 }
 

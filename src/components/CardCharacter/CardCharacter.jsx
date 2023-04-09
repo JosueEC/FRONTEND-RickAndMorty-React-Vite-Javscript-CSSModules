@@ -5,12 +5,20 @@ import style from './CardCharacter.module.css'
 import Portal from '../../assets/portal1.png'
 
 export default function CardCharacter (props) {
-  // const { id, name, gender, specie, status, origin, image } = props
-  const { id, name, gender, image } = props
+  // const { id, name, gender, specie, status, origin, image, favorite } = props
+  const { id, name, gender, image, favorite } = props
 
   return (
     <div className={style.containerCard}>
-      <button className={style.buttonFav}>❤️</button>
+      {
+        favorite
+          ? (
+            <button className={style.buttonFav}>❤️</button>
+            )
+          : (
+            <button className={style.buttonFav}>🤍</button>
+            )
+      }
 
       <button className={style.buttonClose}>X</button>
 
@@ -39,3 +47,4 @@ export default function CardCharacter (props) {
 // "status": "Alive",
 // "origin": "Earth (C-137)",
 // "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+// "favorite": false

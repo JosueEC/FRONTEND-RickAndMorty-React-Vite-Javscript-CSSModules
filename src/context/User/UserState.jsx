@@ -20,7 +20,7 @@ const UserState = (props) => {
         .then((data) => {
           return data
         })
-      // console.log(res)
+      console.log(res)
       const data = res
       dispatch({ type: GET_USERS, payload: data })
     } catch (error) {
@@ -28,9 +28,9 @@ const UserState = (props) => {
     }
   }
 
-  const getProfile = async (query) => {
+  const getProfile = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/rickandmorty/character/?name=${query}`)
+      const res = await fetch(`http://localhost:3001/rickandmorty/character/?name=${id}`)
         .then((response) => response.json())
         .then((data) => {
           return data
@@ -42,6 +42,27 @@ const UserState = (props) => {
       console.log(error.message)
     }
   }
+
+  // const addFavorite = async (id) => {
+  //   try {
+  //     // datos mandados con la solicutud POST
+  //     // const _datos = {
+  //     //   titulo: 'foo',
+  //     //   principal: 'bar',
+  //     //   Id: 1
+  //     // }
+
+  //     fetch(`http://localhost:3001/favorite/${id}`, {
+  //       method: 'POST',
+  //       // body: JSON.stringify(_datos),
+  //       headers: { 'Content-type': 'application/json; charset=UTF-8' }
+  //     })
+  //       .then(response => response.json())
+  //       .then(data => console.log(data))
+  //   } catch (error) {
+  //     console.log(error.message)
+  //   }
+  // }
 
   return (
     <UserContext.Provider

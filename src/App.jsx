@@ -1,18 +1,17 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 
 import './App.css'
 
 import Navbar from './components/NavBar/Navbar'
 
-import Home from './pages/Home/Home'
 import Characters from './pages/Characters/Characters'
 import Favorites from './pages/Favorites/Favorites'
 import Details from './pages/Details/Details'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
+import LandingPage from './pages/LandingPage/LandingPage'
 
 import {
-  pathHome,
   pathCharacters,
   pathFavorites,
   pathDetails,
@@ -21,15 +20,20 @@ import {
 } from './utilities/routePaths'
 
 function App () {
+  const location = useLocation()
   return (
     <main>
+      {
+        (location.pathname === '/home')
+          ? (
+            <LandingPage />
+            )
+          : (
+            <Navbar />
+            )
+      }
       <Navbar />
       <Routes>
-
-        <Route
-          path={pathHome}
-          element={<Home />}
-        />
 
         <Route
           path={pathCharacters}
