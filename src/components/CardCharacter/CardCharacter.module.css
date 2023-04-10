@@ -8,8 +8,11 @@
 							25px 0 20px -20px rgba(0, 0, 0, 0.45);
 	transition: 0.5s;
 	cursor: pointer;
-	animation-name: fadeIn;
+	/* animation-name: fadeIn; */
+  animation: myAnim 1s ease 0s 1 normal forwards;
   animation-duration: 1s;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 @keyframes fadeIn {
@@ -19,6 +22,16 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
 
 .containerCard:hover {
@@ -32,7 +45,6 @@
 	animation: 13s rotate linear infinite;
 	border-radius: 50%;
 	background:rgb(25, 255, 128);
-	/* filter: drop-shadow(5px 0px 16px 18px rgb(25, 255, 128)); */
 }
 
 .containerCard:hover img {
@@ -48,7 +60,7 @@
 	}
 }
 
-/*/////////////////////////////////////////////////////////////*/
+
 
 .boxImg {
 	display: grid;
@@ -103,10 +115,7 @@ img:hover {
 	color: #fff;
 }
 
-/*////////////////////////////////////////////////////////*/
 
-
-/*/////////////////////////////////////////////////////////////*/
 
 .boxContent {
 	position: relative;

@@ -30,7 +30,7 @@ body{
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: url("img/bg.jpg") no-repeat center;
+	/* background: url("img/bg.jpg") no-repeat center; */
 	background-size: cover;
 	filter: blur(50px);
 	z-index: -1;
@@ -47,7 +47,7 @@ body{
 }
 
 .left{
-	background: url('../../assets/fondocontact.jpg') no-repeat center;
+	background: url('./assets/fondocontact.jpg') no-repeat center;
 	background-size: cover;
 	height: 100%;
 }
@@ -83,10 +83,11 @@ h2:after{
 	font-size: 1.1rem;
 	margin-bottom: 22px;
 	transition: .3s;
+	color: #111;
 }
 
 .field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 250, 33, 0.61);
 }
 
 textarea{

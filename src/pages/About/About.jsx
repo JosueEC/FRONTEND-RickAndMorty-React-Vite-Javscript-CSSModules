@@ -1,9 +1,12 @@
 import React from 'react'
 import style from './About.module.css'
 
+import { Link } from 'react-router-dom'
+import { pathContact } from '../../utilities/routePaths'
+
 export default function About () {
   return (
-    <body>
+    <div className={style.containerAbout}>
       <div className={style.container}>
         <div className={style.contactBox}>
           <div className={style.right}>
@@ -15,11 +18,11 @@ export default function About () {
               Para el BackEnd use Javascript, NodeJS, Express, Sequelize, y PostgreSQL.
               Para el FrontEnd use Javascript, ReactJS, UseContext, CSSModules
             </p>
-            <button className={style.btn}>Contactar</button>
+            <Link to={pathContact}><button className={style.btn}>Contactar</button></Link>
           </div>
           <div className={style.left} />
         </div>
       </div>
-    </body>
+    </div>
   )
 }

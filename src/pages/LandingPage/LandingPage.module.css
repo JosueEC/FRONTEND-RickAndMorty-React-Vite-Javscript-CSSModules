@@ -20,7 +20,7 @@
     width: 100%;
 
     /* Background */
-    background: url('../../assets/fondogeneral.jpg') center center / cover no-repeat;
+    background: url('./assets//fondogeneral.jpg') center center / cover no-repeat;
     animation: myAnim 1s ease 0s 1 normal forwards;
 }
 

@@ -10,7 +10,7 @@ export default function ContainerCards () {
   const { users, getUsers } = useContext(UserContext)
 
   useEffect(() => {
-    getUsers()
+    if (!users) getUsers()
   }, [])
 
   return (

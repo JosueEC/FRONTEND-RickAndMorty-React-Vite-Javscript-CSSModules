@@ -1,7 +1,10 @@
 import { React, useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
-import CardCharacter from '../../components/CardCharacter/CardCharacter'
+import style from './Details.module.css'
+import Loader from '../../components/Loader/Loader'
+
+import { pathCharacters } from '../../utilities/routePaths'
 
 export default function Details () {
   const URL_BASE = 'http://localhost:3001/rickandmorty/character'
@@ -23,21 +26,52 @@ export default function Details () {
           ? (
               data.map(({ id, name, gender, specie, status, origin, image }) => {
                 return (
-                  <CardCharacter
-                    key={id}
-                    id={id}
-                    name={name}
-                    gender={gender}
-                    specie={specie}
-                    status={status}
-                    origin={origin}
-                    image={image}
-                  />
+                  <div className={style.container} key={id}>
+                    <div className={style.contactBox}>
+                      <div className={style.right}>
+                        <h2>{name}</h2>
+                        {
+                          status === 'Alive'
+                            ? (
+                              <h5><span className={style.tituloAbout}>STAUS: <span className={style.detail}>{status}</span>🌀</span></h5>
+                              )
+                            : (
+                              <h5><span className={style.tituloAbout}>STAUS: <span className={style.detail}>{status}</span>💀</span></h5>
+
+                              )
+                        }
+                        {
+                          gender === 'Male'
+                            ? (
+                              <h5><span className={style.tituloAbout}>GENDER: <span className={style.detail}>{gender}</span>🙎‍♂️</span></h5>
+                              )
+                            : (
+                              <h5><span className={style.tituloAbout}>GENDER: <span className={style.detail}>{gender}</span>🙎</span></h5>
+
+                              )
+                        }
+                        {
+                          specie === 'Alien'
+                            ? (
+                              <h5><span className={style.tituloAbout}>SPECIE: <span className={style.detail}>{specie}</span>👽</span></h5>
+                              )
+                            : (
+                              <h5><span className={style.tituloAbout}>SPECIE: <span className={style.detail}>{specie}</span>👤</span></h5>
+                              )
+                        }
+                        <h5><span className={style.tituloAbout}>ORIGIN: <span className={style.detail}>{origin}</span>🌐</span></h5>
+                        <Link to={pathCharacters}><button className={style.btn}>Volver</button></Link>
+                      </div>
+                      <div className={style.left}>
+                        <img src={image} className={style.fotoPersonaje} />
+                      </div>
+                    </div>
+                  </div>
                 )
               })
             )
           : (
-            <h3>Loading...</h3>
+            <Loader />
             )
       }
     </div>

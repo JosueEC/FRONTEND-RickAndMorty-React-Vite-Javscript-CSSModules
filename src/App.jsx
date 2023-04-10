@@ -24,7 +24,7 @@ function App () {
   return (
     <main>
       {
-        (location.pathname === '/home')
+        (location.pathname === '/')
           ? (
             <LandingPage />
             )
