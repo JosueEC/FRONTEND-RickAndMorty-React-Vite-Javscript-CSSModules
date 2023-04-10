@@ -1,4 +1,5 @@
-import { React } from 'react'
+import { React, useContext, useEffect, useState } from 'react'
+import UserContext from '../../context/User/UserContext'
 import { Link } from 'react-router-dom'
 
 import style from './CardCharacter.module.css'
@@ -6,17 +7,41 @@ import Portal from './assets/portal1.png'
 
 export default function CardCharacter (props) {
   // const { id, name, gender, specie, status, origin, image, favorite } = props
-  const { id, name, status, image, favorite } = props
+  const { id, name, status, image } = props
+  const { favorites, addFavorite, deleteFavorite } = useContext(UserContext)
+
+  const [isFav, setIsFav] = useState(false)
+
+  function handleFavorite (event) {
+    // event.preventDefault()
+    if (isFav) {
+      setIsFav(false)
+      deleteFavorite(id)
+    } else {
+      setIsFav(true)
+      addFavorite(props)
+    }
+  }
+
+  useEffect(() => {
+    console.log('FAVORITES: ', favorites)
+    favorites.forEach(char => {
+      // console.log('CHAR ID: ', char.id)
+      if (char.id === id) {
+        setIsFav(true)
+      }
+    })
+  }, [favorites])
 
   return (
     <div className={style.containerCard} key={id}>
       {
-        favorite
+        isFav
           ? (
-            <button className={style.buttonFav}>❤️</button>
+            <button onClick={handleFavorite} className={style.buttonFav}>❤️</button>
             )
           : (
-            <button className={style.buttonFav}>🤍</button>
+            <button onClick={handleFavorite} className={style.buttonFav}>🤍</button>
             )
       }
 

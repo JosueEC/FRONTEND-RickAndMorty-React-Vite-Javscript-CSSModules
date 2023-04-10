@@ -1,9 +1,13 @@
-import React from 'react'
+import { React, useContext } from 'react'
+import UserContext from '../../context/User/UserContext'
+
+import ContainerCards from '../../components/ContainerCards/ContainerCards'
 
 export default function Favorites () {
+  const { favorites } = useContext(UserContext)
   return (
     <main>
-      <h1> Favorites Page </h1>
+      <ContainerCards characters={favorites} />
     </main>
   )
 }

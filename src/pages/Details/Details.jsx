@@ -33,10 +33,10 @@ export default function Details () {
                         {
                           status === 'Alive'
                             ? (
-                              <h5><span className={style.tituloAbout}>STAUS: <span className={style.detail}>{status}</span>🌀</span></h5>
+                              <h5><span className={style.tituloAbout}>STATUS: <span className={style.detail}>{status}</span>🌀</span></h5>
                               )
                             : (
-                              <h5><span className={style.tituloAbout}>STAUS: <span className={style.detail}>{status}</span>💀</span></h5>
+                              <h5><span className={style.tituloAbout}>STATUS: <span className={style.detail}>{status}</span>💀</span></h5>
 
                               )
                         }
@@ -60,7 +60,7 @@ export default function Details () {
                               )
                         }
                         <h5><span className={style.tituloAbout}>ORIGIN: <span className={style.detail}>{origin}</span>🌐</span></h5>
-                        <Link to={pathCharacters}><button className={style.btn}>Volver</button></Link>
+                        <Link to={pathCharacters}><button className={style.btn}>Back</button></Link>
                       </div>
                       <div className={style.left}>
                         <img src={image} className={style.fotoPersonaje} />

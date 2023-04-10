@@ -3,7 +3,7 @@ import React from 'react'
 import style from './Navbar.module.css'
 import SearchBar from '../SearchBar/SearchBar'
 
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import {
   pathHome,
@@ -15,7 +15,6 @@ import {
 } from '../../utilities/routePaths'
 
 export default function Navbar () {
-  const location = useLocation()
   return (
     <header>
       <nav>
@@ -46,19 +45,10 @@ export default function Navbar () {
           </li>
 
           <li>
-            {
-            location.pathname === '/characters'
-              ? (
-                <SearchBar />
-                )
-              : (
-                <></>
-                )
-          }
+            <SearchBar />
           </li>
 
         </ul>
-
       </nav>
     </header>
   )

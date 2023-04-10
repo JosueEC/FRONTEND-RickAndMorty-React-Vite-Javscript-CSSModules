@@ -3,11 +3,13 @@ import React, { useReducer } from 'react'
 import UserContext from './UserContext'
 import UserReducer from './UserReducer'
 
-import { GET_USERS, GET_PROFILE } from '../types'
+import { GET_USERS, ADD_FAVORITE, DELETE_FAVORITE } from '../types'
 
 const UserState = (props) => {
   const initialState = {
     users: [],
+    favorites: [],
+    allUsers: [],
     selectedUser: null
   }
 
@@ -20,7 +22,7 @@ const UserState = (props) => {
         .then((data) => {
           return data
         })
-      console.log(res)
+      // console.log(res)
       const data = res
       dispatch({ type: GET_USERS, payload: data })
     } catch (error) {
@@ -28,49 +30,45 @@ const UserState = (props) => {
     }
   }
 
-  const getProfile = async (id) => {
-    try {
-      const res = await fetch(`http://localhost:3001/rickandmorty/character/?name=${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          return data
-        })
-      // console.log(res)
-      const data = res
-      dispatch({ type: GET_PROFILE, payload: data })
-    } catch (error) {
-      console.log(error.message)
-    }
-  }
-
-  // const addFavorite = async (id) => {
+  // const getProfile = async (id) => {
   //   try {
-  //     // datos mandados con la solicutud POST
-  //     // const _datos = {
-  //     //   titulo: 'foo',
-  //     //   principal: 'bar',
-  //     //   Id: 1
-  //     // }
-
-  //     fetch(`http://localhost:3001/favorite/${id}`, {
-  //       method: 'POST',
-  //       // body: JSON.stringify(_datos),
-  //       headers: { 'Content-type': 'application/json; charset=UTF-8' }
-  //     })
-  //       .then(response => response.json())
-  //       .then(data => console.log(data))
+  //     const res = await fetch(`http://localhost:3001/rickandmorty/character/?name=${id}`)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         return data
+  //       })
+  //     // console.log(res)
+  //     const data = res
+  //     dispatch({ type: GET_PROFILE, payload: data })
   //   } catch (error) {
   //     console.log(error.message)
   //   }
   // }
 
+  const addFavorite = async (character) => {
+    // console.log(character)
+    dispatch({
+      type: ADD_FAVORITE,
+      payload: character
+    })
+  }
+
+  const deleteFavorite = async (id) => {
+    dispatch({
+      type: DELETE_FAVORITE,
+      payload: id
+    })
+  }
+
   return (
     <UserContext.Provider
       value={{
         users: state.users,
+        favorites: state.favorites,
         selectedUser: state.selectedUser,
         getUsers,
-        getProfile
+        deleteFavorite,
+        addFavorite
       }}
     >
       {props.children}

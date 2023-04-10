@@ -1,3 +1,4 @@
 export const GET_USERS = 'GET_USERS'
 export const GET_PROFILE = 'GET_PROFILE'
 export const ADD_FAVORITE = 'ADD_FAVORITE'
+export const DELETE_FAVORITE = 'DELETE_FAVORITE'

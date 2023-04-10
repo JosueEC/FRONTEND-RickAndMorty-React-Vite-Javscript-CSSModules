@@ -26,7 +26,7 @@ export default function SearchBar () {
       <button
         className={style.buttonSearch}
         onClick={handleClick}
-      >Buscar
+      >Search
       </button>
     </div>
   )

@@ -20,7 +20,7 @@ body{
 	align-items: center;
 	padding: 20px 100px;
 	animation: myAnim 1s ease 0s 1 normal forwards;
-	top: 40px;
+	top: 90px;
 }
 
 .container:after{
@@ -104,11 +104,12 @@ textarea{
 	border: none;
 	outline: none;
 	cursor: pointer;
-	transition: .3s;
+	transition: 0.5s;
 }
 
 .btn:hover{
     background-color: #27ae60;
+	transform: scale(1.1);
 }
 
 .field:focus{
